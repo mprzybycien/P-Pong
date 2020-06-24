@@ -18,6 +18,7 @@ int licznikOdbic;
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
 {
+verdict -> Left = bg -> Width/2 - verdict -> Width/2;
 }
 //---------------------------------------------------------------------------
 
@@ -40,6 +41,7 @@ leftScore -> Top = bg -> Height/2 - leftScore -> Height/2;
 rightScore -> Left = bg -> Width - 10 - rightScore -> Width;
 rightScore -> Top = bg -> Height/2 - leftScore -> Height/2;
 bounces -> Left = bg -> Width/2 - bounces -> Width/2;
+startGame -> Left = bg -> Width/2 - startGame -> Width/2;
 
 
 //skucha lewa
@@ -186,4 +188,19 @@ bounces -> Caption = 0;
 }
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TForm1::startGameClick(TObject *Sender)
+{
+b->Visible = True;
+Timer_ball->Enabled=True;
+leftScore->Visible = True;
+rightScore->Visible = True;
+bounces->Visible = True;
+startGame->Visible = False;
+leftP->Visible = True;
+rightP->Visible = True;
+verdict->Visible = False;
+}
+//---------------------------------------------------------------------------
+
 

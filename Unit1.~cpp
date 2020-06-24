@@ -72,6 +72,8 @@ else if((b->Top + b->Height/2 >= leftP->Top ) && (b->Top + b->Height/2 <= leftP-
                         bounces -> Caption = licznikOdbic;
                 }
         }
+
+        
 //skucha prawa
 if(b->Left + b->Width >= rightP->Left + 80)
 {

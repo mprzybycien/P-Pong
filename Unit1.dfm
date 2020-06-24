@@ -1,10 +1,12 @@
 object Form1: TForm1
-  Left = 395
-  Top = 326
+  Left = 374
+  Top = 204
   Width = 1305
   Height = 675
   Caption = '0'
   Color = clBtnFace
+  UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -122,6 +124,7 @@ object Form1: TForm1
       0000000000000000000000000000001DE6B51DE6B51DE6B51DE6B51DE6B51DE6
       B51DE6B51DE6B500000000000000000000000000000000000000000000000000
       00000000000000000000}
+    Visible = False
   end
   object leftP: TImage
     Left = 96
@@ -508,6 +511,7 @@ object Form1: TForm1
       1DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6
       B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51D
       E6B5}
+    Visible = False
   end
   object rightP: TImage
     Left = 816
@@ -894,6 +898,7 @@ object Form1: TForm1
       1DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6
       B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51D
       E6B5}
+    Visible = False
   end
   object bounces: TLabel
     Left = 568
@@ -909,6 +914,8 @@ object Form1: TForm1
     Font.Style = []
     ParentColor = False
     ParentFont = False
+    Transparent = True
+    Visible = False
   end
   object leftScore: TLabel
     Left = 16
@@ -924,6 +931,7 @@ object Form1: TForm1
     Font.Style = []
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object rightScore: TLabel
     Left = 1056
@@ -939,24 +947,24 @@ object Form1: TForm1
     Font.Style = []
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object verdict: TLabel
     Left = 536
     Top = 168
-    Width = 22
+    Width = 435
     Height = 46
-    Caption = '0'
+    Caption = 'WITAJ W GRZE P-Pong'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -40
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    Visible = False
   end
   object nextGame: TButton
-    Left = 416
-    Top = 280
+    Left = 400
+    Top = 256
     Width = 350
     Height = 60
     Caption = 'Nast'#281'pna runda >'
@@ -971,8 +979,8 @@ object Form1: TForm1
     OnClick = nextGameClick
   end
   object newGame: TButton
-    Left = 440
-    Top = 360
+    Left = 400
+    Top = 328
     Width = 350
     Height = 60
     Caption = 'Zagrajmy od nowa!'
@@ -985,6 +993,21 @@ object Form1: TForm1
     TabOrder = 1
     Visible = False
     OnClick = newGameClick
+  end
+  object startGame: TButton
+    Left = 832
+    Top = 272
+    Width = 337
+    Height = 89
+    Caption = 'NOWA GRA'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -40
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = startGameClick
   end
   object leftDown: TTimer
     Enabled = False
