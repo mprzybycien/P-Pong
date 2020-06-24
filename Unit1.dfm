@@ -1,18 +1,18 @@
-object Form1: TForm1
-  Left = 374
-  Top = 204
+object PPong: TPPong
+  Left = 286
+  Top = 190
   Width = 1305
   Height = 675
-  Caption = '0'
+  Caption = 'PPong'
   Color = clBtnFace
   UseDockManager = True
-  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
@@ -29,8 +29,8 @@ object Form1: TForm1
     Pen.Width = 0
   end
   object b: TImage
-    Left = 584
-    Top = 256
+    Left = 368
+    Top = 160
     Width = 30
     Height = 30
     AutoSize = True
@@ -963,8 +963,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object nextGame: TButton
-    Left = 400
-    Top = 256
+    Left = 416
+    Top = 264
     Width = 350
     Height = 60
     Caption = 'Nast'#281'pna runda >'
@@ -979,8 +979,8 @@ object Form1: TForm1
     OnClick = nextGameClick
   end
   object newGame: TButton
-    Left = 400
-    Top = 328
+    Left = 416
+    Top = 336
     Width = 350
     Height = 60
     Caption = 'Zagrajmy od nowa!'
@@ -1008,6 +1008,22 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 2
     OnClick = startGameClick
+  end
+  object leftSound: TMediaPlayer
+    Left = 136
+    Top = 512
+    Width = 253
+    Height = 30
+    Visible = False
+    TabOrder = 3
+  end
+  object rightSound: TMediaPlayer
+    Left = 1032
+    Top = 504
+    Width = 253
+    Height = 30
+    Visible = False
+    TabOrder = 4
   end
   object leftDown: TTimer
     Enabled = False
@@ -1038,6 +1054,7 @@ object Form1: TForm1
     Top = 96
   end
   object Timer_ball: TTimer
+    Enabled = False
     Interval = 15
     OnTimer = Timer_ballTimer
     Left = 584
