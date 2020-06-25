@@ -1,16 +1,18 @@
-object Form1: TForm1
-  Left = 395
-  Top = 326
-  Width = 1305
+object PPong: TPPong
+  Left = 286
+  Top = 190
+  Width = 1319
   Height = 675
-  Caption = '0'
+  Caption = 'PPong'
   Color = clBtnFace
+  UseDockManager = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
@@ -19,7 +21,7 @@ object Form1: TForm1
   object bg: TShape
     Left = 0
     Top = 0
-    Width = 1289
+    Width = 1303
     Height = 636
     Align = alClient
     Pen.Color = clWindowText
@@ -27,8 +29,8 @@ object Form1: TForm1
     Pen.Width = 0
   end
   object b: TImage
-    Left = 584
-    Top = 256
+    Left = 368
+    Top = 160
     Width = 30
     Height = 30
     AutoSize = True
@@ -122,6 +124,7 @@ object Form1: TForm1
       0000000000000000000000000000001DE6B51DE6B51DE6B51DE6B51DE6B51DE6
       B51DE6B51DE6B500000000000000000000000000000000000000000000000000
       00000000000000000000}
+    Visible = False
   end
   object leftP: TImage
     Left = 96
@@ -508,6 +511,7 @@ object Form1: TForm1
       1DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6
       B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51D
       E6B5}
+    Visible = False
   end
   object rightP: TImage
     Left = 816
@@ -894,6 +898,7 @@ object Form1: TForm1
       1DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6
       B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51DE6B51D
       E6B5}
+    Visible = False
   end
   object bounces: TLabel
     Left = 568
@@ -909,6 +914,8 @@ object Form1: TForm1
     Font.Style = []
     ParentColor = False
     ParentFont = False
+    Transparent = True
+    Visible = False
   end
   object leftScore: TLabel
     Left = 16
@@ -924,6 +931,7 @@ object Form1: TForm1
     Font.Style = []
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object rightScore: TLabel
     Left = 1056
@@ -939,24 +947,24 @@ object Form1: TForm1
     Font.Style = []
     ParentColor = False
     ParentFont = False
+    Visible = False
   end
   object verdict: TLabel
     Left = 536
     Top = 168
-    Width = 22
+    Width = 435
     Height = 46
-    Caption = '0'
+    Caption = 'WITAJ W GRZE P-Pong'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -40
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    Visible = False
   end
   object nextGame: TButton
     Left = 416
-    Top = 280
+    Top = 264
     Width = 350
     Height = 60
     Caption = 'Nast'#281'pna runda >'
@@ -971,8 +979,8 @@ object Form1: TForm1
     OnClick = nextGameClick
   end
   object newGame: TButton
-    Left = 440
-    Top = 360
+    Left = 416
+    Top = 336
     Width = 350
     Height = 60
     Caption = 'Zagrajmy od nowa!'
@@ -986,35 +994,67 @@ object Form1: TForm1
     Visible = False
     OnClick = newGameClick
   end
+  object startGame: TButton
+    Left = 832
+    Top = 272
+    Width = 337
+    Height = 89
+    Caption = 'NOWA GRA'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -40
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = startGameClick
+  end
+  object leftSound: TMediaPlayer
+    Left = 136
+    Top = 512
+    Width = 253
+    Height = 30
+    Visible = False
+    TabOrder = 3
+  end
+  object rightSound: TMediaPlayer
+    Left = 1032
+    Top = 504
+    Width = 253
+    Height = 30
+    Visible = False
+    TabOrder = 4
+  end
   object leftDown: TTimer
     Enabled = False
-    Interval = 15
+    Interval = 12
     OnTimer = leftDownTimer
     Left = 104
     Top = 64
   end
   object leftUp: TTimer
     Enabled = False
-    Interval = 15
+    Interval = 12
     OnTimer = leftUpTimer
     Left = 104
     Top = 32
   end
   object rightUp: TTimer
     Enabled = False
-    Interval = 15
+    Interval = 12
     OnTimer = rightUpTimer
     Left = 1120
     Top = 56
   end
   object rightDown: TTimer
     Enabled = False
-    Interval = 15
+    Interval = 12
     OnTimer = rightDownTimer
     Left = 1112
     Top = 96
   end
   object Timer_ball: TTimer
+    Enabled = False
     Interval = 15
     OnTimer = Timer_ballTimer
     Left = 584
