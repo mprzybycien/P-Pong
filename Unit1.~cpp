@@ -62,7 +62,8 @@ else if((b->Top + b->Height/2 >= leftP->Top ) && (b->Top + b->Height/2 <= leftP-
         {
                 if((b->Top > leftP->Top + 60) && (b->Top < leftP->Top + 140))
                 {
-                        //sndPlaySound("wav/left.wav", SND_ASYNC);
+                        leftSound->Play();
+
                         x = x*1.25;
                         x = -x;
                         bouncesIterator++;
@@ -70,7 +71,6 @@ else if((b->Top + b->Height/2 >= leftP->Top ) && (b->Top + b->Height/2 <= leftP-
                 }
                 else
                 {
-                        //sndPlaySound("wav/left.wav", SND_ASYNC);
                         leftSound->Play();
                         x = -x;
                         bouncesIterator++;
@@ -155,6 +155,10 @@ if (rightP->Top + rightP->Height <= bg->Height -15) rightP->Top += 10;
 void __fastcall TPPong::FormCreate(TObject *Sender)
 {
 ShowMessage("Witaj w grze Ping-Pong!!!\nLewy gracz steruje klawiszami A i Z.\nPrawy gracz steruje strza³kami GÓRA i DÓ£. \nOdbicie pi³ki na srodku paletki przyspieszy ruch pi³ki oraz zwiêkszy k¹t odbicia wzglêdem p³aszczyzny paletki.");
+leftSound->FileName = "wav/left.wav";
+leftSound->Open();
+rightSound->FileName = "wav/right.wav";
+rightSound->Open();
 }
 //---------------------------------------------------------------------------
 void __fastcall TPPong::nextGameClick(TObject *Sender)
@@ -209,4 +213,10 @@ verdict->Visible = False;
 //---------------------------------------------------------------------------
 
 
+void __fastcall TPPong::FormClose(TObject *Sender, TCloseAction &Action)
+{
+rightSound->Close();
+leftSound->Close();
+}
+//---------------------------------------------------------------------------
 

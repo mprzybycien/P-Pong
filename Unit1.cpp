@@ -49,6 +49,7 @@ if(b->Left < leftP->Left + leftP->Width - 80)
 {
         Timer_ball -> Enabled = false;
         rightPoints++;
+        x = -4;
         rightScore -> Caption = rightPoints;
         verdict -> Caption = "Punkt dla gracza prawego >";
         verdict -> Left = bg -> Width/2 - verdict -> Width/2;
@@ -63,6 +64,7 @@ else if((b->Top + b->Height/2 >= leftP->Top ) && (b->Top + b->Height/2 <= leftP-
                 if((b->Top > leftP->Top + 60) && (b->Top < leftP->Top + 140))
                 {
                         leftSound->Play();
+
                         x = x*1.25;
                         x = -x;
                         bouncesIterator++;
@@ -83,6 +85,7 @@ if(b->Left + b->Width >= rightP->Left + 80)
 {
         Timer_ball -> Enabled = false;
         leftPoints++;
+        x = 4;
         leftScore -> Caption = leftPoints;
         verdict -> Caption = "< Punkt dla gracza lewego";
         verdict -> Left = bg -> Width/2 - verdict -> Width/2;
@@ -168,8 +171,6 @@ nextGame -> Visible = false;
 newGame -> Visible = false;
 b -> Top = bg -> Height/2;
 b -> Left = bg -> Width/2;
-x = -4;
-x = x * -1;
 Timer_ball -> Enabled = true;
 bounces -> Caption = 0;
 }
@@ -181,7 +182,6 @@ if(Application->MessageBox(
 MB_YESNO | MB_ICONQUESTION) == IDYES)
 {
 bouncesIterator = 0;
-x = -4;
 verdict -> Visible = false;
 nextGame -> Visible = false;
 newGame -> Visible = false;

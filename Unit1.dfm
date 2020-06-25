@@ -1,7 +1,7 @@
 object PPong: TPPong
   Left = 286
   Top = 190
-  Width = 1305
+  Width = 1319
   Height = 675
   Caption = 'PPong'
   Color = clBtnFace
@@ -21,7 +21,7 @@ object PPong: TPPong
   object bg: TShape
     Left = 0
     Top = 0
-    Width = 1289
+    Width = 1303
     Height = 636
     Align = alClient
     Pen.Color = clWindowText
@@ -1027,28 +1027,28 @@ object PPong: TPPong
   end
   object leftDown: TTimer
     Enabled = False
-    Interval = 15
+    Interval = 12
     OnTimer = leftDownTimer
     Left = 104
     Top = 64
   end
   object leftUp: TTimer
     Enabled = False
-    Interval = 15
+    Interval = 12
     OnTimer = leftUpTimer
     Left = 104
     Top = 32
   end
   object rightUp: TTimer
     Enabled = False
-    Interval = 15
+    Interval = 12
     OnTimer = rightUpTimer
     Left = 1120
     Top = 56
   end
   object rightDown: TTimer
     Enabled = False
-    Interval = 15
+    Interval = 12
     OnTimer = rightDownTimer
     Left = 1112
     Top = 96
